@@ -12,7 +12,9 @@ app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'sta
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
 # Enable CORS for all routes
-CORS(app)
+CORS(app, origins=[
+    "https://songcomp.netlify.app",
+])
 
 app.register_blueprint(voting_bp, url_prefix='/api')
 
